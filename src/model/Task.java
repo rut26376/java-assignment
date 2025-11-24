@@ -53,5 +53,12 @@ public class Task {
 	{
 		return "{id:" + id + ",title:" + title + ",description:" + description + ",status:" + status + "},\n";
 	}
+
+	@Override
+	public String toString() {
+		return "Task [id=" + id + ", title=" + title + ", description=" + description + ", status=" + status + "]";
+	}
+	
+	
 	
 }
