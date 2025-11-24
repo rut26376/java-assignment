@@ -10,5 +10,29 @@ public class TaskRepository {
 	private List<Task> tasks;
 	
 	
-	
+	public List<Task> ListAll()
+	{
+		String data = "";
+		try {
+			File myFile = new File(JSON_FILE);
+            Scanner myReader = new Scanner(myFile);
+            
+            while (myReader.hasNextLine()) 
+                data += myReader.nextLine();
+   
+          myReader.close();
+            
+          data = data.replace("{", "");
+          data = data.replace("}", "");
+            
+          String [] d =  data.split(",");
+            
+        } catch (FileNotFoundException e) {
+            System.out.println("An error occurred: File not found.");
+            e.printStackTrace();
+        }
+		
+		
+		return tasks;
+	}
 }
