@@ -8,8 +8,12 @@ import java.util.Scanner;
 public class TaskRepository {
 
 	private final String JSON_FILE = "C:/Users/java/TaskManagement/src/model/Tasks.json";
-	private List<Task> tasks  = new ArrayList<Task>();
+	private List<Task> tasks;
 	
+	public TaskRepository()
+	{
+		this.tasks = new ArrayList<Task>();
+	}
 	
 	public List<Task> ListAll()
 	{
