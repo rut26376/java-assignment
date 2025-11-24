@@ -7,9 +7,6 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 public class TaskRepository {
 
 	private final String JSON_FILE = "C:/Users/java/TaskManagement/src/model/Tasks.json";
@@ -55,7 +52,30 @@ public class TaskRepository {
 		return null;
 	}
 	
-	
+	public boolean Delete(int id)
+	{
+		ListAll();
+		Task t = getById(id);
+		if(t != null)
+		{
+			tasks.remove(t);
+			CleanJSon();
+			for(Task ts: tasks)
+			{
+				try
+				{
+					WriteTaskToJson(ts);
+				}
+				catch (Exception e) {
+					System.out.println("Error appending data: " + e.getMessage());
+					return false;
+				}
+			}
+			return true;
+		}
+		return false;
+		
+	}
 	
 	private boolean CleanJSon()
 	{
@@ -85,9 +105,10 @@ public class TaskRepository {
 	        }
 	}
 	
-	public List<Task> ListAll()
+	public void ListAll()
 	{
 		String data = "";
+		tasks = new ArrayList<Task>();
 		try {
 			File myFile = new File(JSON_FILE);
             Scanner myReader = new Scanner(myFile);
@@ -140,6 +161,5 @@ public class TaskRepository {
             e.printStackTrace();
         }
 		
-		return tasks;
 	}
 }

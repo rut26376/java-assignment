@@ -1,6 +1,5 @@
 package model;
 
-import java.util.ArrayList;
 
 public class Main {
 
@@ -11,6 +10,7 @@ public class Main {
 		System.out.println(t.Add(14, "iohi", "jidf"));
 		t.ListAll();
 		System.out.println(t.getById(14));
+		t.Delete(12);
 		
 	}
 
