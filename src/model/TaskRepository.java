@@ -1,13 +1,15 @@
 package model;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 public class TaskRepository {
 
 	private final String JSON_FILE = "C:/Users/java/TaskManagement/src/model/Tasks.json";
@@ -28,17 +30,15 @@ public class TaskRepository {
 		else
 		{
 			Task t = new Task(id , title , description , Status.NEW);
-			String data = t.toJson();
-			 try  {
-				 FileWriter fw = new FileWriter(JSON_FILE, true);
-	             BufferedWriter writer = new BufferedWriter(fw);
-		         writer.write(data);
-		         writer.close();
-		        } catch (IOException e) {
-		           return "Error appending data: " + e.getMessage();
-		        }
-			
-			return "The task was created successfully.";
+			try
+			{
+				WriteTaskToJson(t);
+				return "The task was created successfully.";
+			}
+			catch (Exception e) {
+				return e.getMessage();
+			}
+			 
 		}
 		
 	}
@@ -58,8 +58,19 @@ public class TaskRepository {
 	
 	
 	
-	
-	
+	private boolean WriteTaskToJson(Task t) throws Exception
+	{
+		String data = t.toJson();
+		 try  {
+			 FileWriter fw = new FileWriter(JSON_FILE, true);
+            BufferedWriter writer = new BufferedWriter(fw);
+	         writer.write(data);
+	         writer.close();
+	         return true;
+	        } catch (IOException e) {
+	          throw new Exception("Error appending data: " + e.getMessage());
+	        }
+	}
 	
 	public List<Task> ListAll()
 	{
