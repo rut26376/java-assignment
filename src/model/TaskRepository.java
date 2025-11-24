@@ -46,6 +46,12 @@ public class TaskRepository {
 	
 	public Task getById(int id)
 	{
+		ListAll();
+		for(Task task :tasks)
+		{
+			if(task.getId() == id)
+				return task;
+		}
 		return null;
 	}
 	
@@ -111,9 +117,6 @@ public class TaskRepository {
             e.printStackTrace();
         }
 		
-		for (Task task : tasks) {
-			System.out.println(task.toString());
-		}
 		return tasks;
 	}
 }

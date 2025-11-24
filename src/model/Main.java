@@ -7,9 +7,10 @@ public class Main {
 	public static void main(String[] args) {
 		
 		TaskRepository t = new TaskRepository();
-		t.Add(12, "iohi", "jidf");
-		t.Add(13, "iohi", "jidf");
+		System.out.println(t.Add(12, "iohi", "jidf"));
+		System.out.println(t.Add(14, "iohi", "jidf"));
 		t.ListAll();
+		System.out.println(t.getById(14));
 	}
 
 }
