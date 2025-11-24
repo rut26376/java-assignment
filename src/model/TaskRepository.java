@@ -57,6 +57,19 @@ public class TaskRepository {
 	
 	
 	
+	private boolean CleanJSon()
+	{
+		try
+		{
+			new PrintWriter(JSON_FILE).close();
+			return true;
+		}
+		catch(Exception e)
+		{
+			System.out.println("Error appending data: " + e.getMessage());
+			return false;
+		}
+	}
 	
 	private boolean WriteTaskToJson(Task t) throws Exception
 	{
