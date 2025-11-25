@@ -30,7 +30,7 @@ actions for Books:
 * update(Book b) = מקבל ספר ומעדכן אותו
 
 actions for Customers:
-* Customers() = טוען את כל הספרים ממסד הנתונים ממיר לאוביקט ומחזיר ללקוח
+* getAllCustomers() = טוען את כל הלקוחות ממסד הנתונים ממיר לאוביקט ומחזיר ללקוח
 * getCustomerById(String id) = מחפש לקוח מסוים לפי הקוד שלו ומחזיר ללקוח
 * add(Customer c) = מקבל לקוח חדש ומוסיף אותו לנתונים הקיימים
 * delete(String id) = מסיר את הלקוח ממאגר הנתונים לפי הקוד שלו
@@ -50,14 +50,14 @@ actions for Loans:
 	private String name;
 	private String author;
 	private Category category; (Category is enum)
-	private boolean isLoan;
+	private boolean isLoaned;
 	}
 	
 	public class Customer{
 	private String id;
 	private String name;
 	private String phone;
-	private LocalDate age;
+	private LocalDate birthData;
 	}
 	
 	public class Loan{
