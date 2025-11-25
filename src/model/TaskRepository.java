@@ -98,7 +98,7 @@ public abstract class TaskRepository {
 		return null;
 	}
 	
-	public void listAll()
+	public List<Task> listAll()
 	{
 		String data = "";
 		tasks = new ArrayList<Task>();
@@ -153,9 +153,13 @@ public abstract class TaskRepository {
             System.out.println("An error occurred:" + e.getMessage());
             e.printStackTrace();
         }
-		
+		return tasks;
 	}
 	
+	public List<Task> getTasks() {
+		return tasks;
+	}
+
 	private boolean cleanJSon()
 	{
 		try

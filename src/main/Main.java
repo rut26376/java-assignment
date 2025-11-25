@@ -1,34 +1,54 @@
 package main;
 
-
-
-import model.Status;
-import model.Task;
-import model.TaskService;
+import java.util.Scanner;
 
 public class Main {
 
-	public static void main(String[] args) {
-		
-		TaskService tr = new TaskService();
-		
-		System.out.println(tr.add(13, "iohi", "jidf"));
-		tr.markAsDone(13);
-		System.out.println(tr.add(1, "iohi", "jidf"));
-		System.out.println(tr.add(2, "iohi", "jidf"));
-		System.out.println(tr.add(3, "iohi", "jidf"));
-		System.out.println(tr.add(12, "iohi", "jidf"));
-		
-		tr.listAll();
-		System.out.println(tr.getById(14));
-		Task t2 = tr.getById(3);
-		t2.setStatus(Status.IN_PROGRESS);
-		tr.update(t2);
-		tr.markAsDone(13);
-//		tr.markAsDone(1);
-//		System.out.println("se" + tr.searchByText("i"));
-		//System.out.println(tr.sortByStatus());
-		;
-	}
+	 public static void main(String[] args) {
+		 Scanner console = new Scanner(System.in);
+		int type = -1;
+		System.out.println("Choose an option:\n"
+				+ "0. Exit"
+				+ "1. Add\n"
+				+ "2. Update\n"
+				+ "3. Delete\n"
+				+ "4. Get By Id\n"
+				+ "5. List all\n"
+				+ "6. Mark as done\n"
+				+ "7. Search by text\n"
+				+ "8. Sort by status");
+		while(type != 0)
+		{
+			
+			System.out.print("Your choice: ");
+			type = console.nextInt();
+			switch (type)
+			{
+			case 1:
+				break;
+			case 2:
+				break;
+			case 3:
+				break;
+			case 4:
+				break;
+			case 5:
+				break;
+			case 6:
+				break;
+			case 7:
+				break;
+			case 8:
+				break;
+			
+			}
+		}
+		 
+		 
+		 
+		 
+		 
+		 
+	    }
 
 }
