@@ -73,7 +73,7 @@ actions for Loans:
 	
 	Book:
 	- id - חייב להיות מזהה לספר
-	- isLoan - חייב להיות מושאל או זמין
+	- isLoaned - חייב להיות מושאל או זמין
 	
 	
 	Customer:
