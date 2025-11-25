@@ -18,10 +18,11 @@ Contains the task management system:
 ### Run Instructions   
 
 - Download the project: git clone https://github.com/rut26376/java-assignment.git
+- Open the project in your workspace.
 
 #### Run the Task Management project
 - Update the JSON file path inside model.TaskRepository according to your local path.
-- run the class main.Main
-
+- run the class main.Main.
+  
 #### Run the algorithmic exercise
-- run this class: algorithms.StrictlyIncreasing
+- run this class: algorithms.StrictlyIncreasing.
