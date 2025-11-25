@@ -1,11 +1,8 @@
 package model;
 
-enum Status
-{
-	 NEW, IN_PROGRESS, DONE
-}
 
-public class Task {
+
+public class Task implements Comparable<Task> {
 
 	private int id;
 	private String title;
@@ -55,6 +52,17 @@ public class Task {
 	@Override
 	public String toString() {
 		return "Task [id=" + id + ", title=" + title + ", description=" + description + ", status=" + status + "]";
+	}
+
+	@Override
+	public int compareTo(Task t) {
+		
+		if(t.status.equals(status))
+		return 0;
+		if(status.name() == "DONE" || (status.name() == "IN_PROGRESS" || t.getStatus().name() == "NEW"))
+			return 1;
+		
+		return -1;
 	}
 	
 	
