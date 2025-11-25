@@ -9,13 +9,14 @@ public class Task implements Comparable<Task> {
 	private String description;
 	private Status status;
 	
-	public Task(int id, String title, String description, Status status) {
+	//אין אפשרות ליצור ישירות משימה אלא רק דרך add()
+    Task(int id, String title, String description, Status status) {
 		this.id = id;
 		this.title = title;
 		this.description = description;
 		this.status = status;
 	}
-	
+	//c- tor בהרשאה דיפולטיבית כדי למנוע יצירת משימה רק עם ID במקומות שאין הרשאה לכך
      Task(int id)
 	{
 		this.id = id;
