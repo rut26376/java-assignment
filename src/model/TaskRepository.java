@@ -24,17 +24,17 @@ public class TaskRepository {
 		return tasks;
 	}
 	
-	public boolean add(String title, String description) {
+	public int add(String title, String description) {
 		int id = getMaxId() + 1;
 
 		Task t = new Task(id, title, description, Status.NEW);
 		try {
 			writeTaskToJson(t);
 			tasks.add(t);
-			return true;
+			return t.getId();
 		} catch (Exception e) {
 			System.out.println( "Error appending data: " + e.getMessage());
-			return false;
+			return -1;
 		}
 	}
 

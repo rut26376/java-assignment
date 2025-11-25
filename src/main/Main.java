@@ -17,7 +17,7 @@ public class Main {
 		//השמה במחלקה העסקית
 		TaskService ts = new TaskService(tr);
 		System.out.println("Choose an option:\n"
-				+ "0. Exit"
+				+ "0. Exit\n"
 				+ "1. Add\n"
 				+ "2. Update\n"
 				+ "3. Delete\n"
@@ -35,9 +35,6 @@ public class Main {
 			switch (type)
 			{
 			case 1:
-				System.out.print("id: ");
-				int id = console.nextInt();
-				console.nextLine();
 				System.out.print("title: ");
 				String title = console.nextLine();
 				System.out.print("description: ");
@@ -46,7 +43,7 @@ public class Main {
 				break;
 			case 2:
 				System.out.print("id: ");
-			    id = console.nextInt();
+			    int id = console.nextInt();
 				console.nextLine();
 				System.out.print("title: ");
 			    title = console.nextLine();
