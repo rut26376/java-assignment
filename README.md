@@ -21,7 +21,6 @@ Contains the task management system:
 - Open the project in your workspace.
 
 #### Run the Task Management project
-<<<<<<< HEAD
 - run the class main.Main
 
 #### Run the algorithmic exercise
