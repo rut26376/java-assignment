@@ -3,7 +3,7 @@ package algorithms;
 import java.util.ArrayList;
 import java.util.List;
 
-public class strictlyIncreasing {
+public class StrictlyIncreasing {
 
 	public static void main(String[] args) {
 		int [] arr = {1 , 2 , 1 , 2 , 3 };
