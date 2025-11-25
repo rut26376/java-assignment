@@ -88,7 +88,6 @@ public class Main {
 			case 8:
 				System.out.println(ts.sortByStatus());
 				break;
-			
 			}
 		}
 		 
