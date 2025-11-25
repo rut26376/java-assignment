@@ -6,6 +6,7 @@ import java.util.List;
 public class StrictlyIncreasing {
 
 	public static void main(String[] args) {
+		//נראה שבדף ההוראות הדוגמא התהפכה להלן הפתרון בהתאם לדוגמא הזו
 		int [] arr = {1 , 2 , 1 , 2 , 3 };
 		System.out.println(strictly_increasing(arr));
 		
