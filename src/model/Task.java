@@ -59,7 +59,7 @@ public class Task implements Comparable<Task> {
 		
 		if(t.status.equals(status))
 		return 0;
-		if(status.name() == "DONE" || (status.name() == "IN_PROGRESS" || t.getStatus().name() == "NEW"))
+		if(status.name() == "DONE" || (status.name() == "IN_PROGRESS" && t.getStatus().name() == "NEW"))
 			return 1;
 		
 		return -1;
